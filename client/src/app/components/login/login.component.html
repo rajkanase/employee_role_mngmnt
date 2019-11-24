@@ -1,0 +1,25 @@
+<div class="parent">
+    <div>
+        <mat-card>
+            <form [formGroup]="loginForm" (submit)="onLoginFormSubmit()" class="example-form">
+                <mat-form-field class="example-full-width">
+                    <input type="email" matInput placeholder="Email" formControlName="email">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'"
+                        formControlName="password">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+                <a [routerLink]="['/registration']" routerLinkActive="router-link-active">Sign Up</a>
+                <div class="example-button-row">
+                    <button [disabled]="loginForm.invalid" type="submit" mat-raised-button
+                        color="primary">Login</button>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</div>

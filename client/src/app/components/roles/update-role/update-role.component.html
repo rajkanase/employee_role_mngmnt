@@ -1,0 +1,19 @@
+<div class="parent">
+    <div>
+        <mat-card>
+            <form *ngIf="loadForm" [formGroup]="roleForm" (submit)="onRoleFormSubmit()" class="example-form">
+                <mat-form-field class="example-full-width">
+                    <input type="text" matInput placeholder="Role Name" formControlName="roleName">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="Role Description" formControlName="roleDescription"></textarea>
+                </mat-form-field>
+                <div class="example-button-row">
+                    <button [disabled]="roleForm.invalid" type="submit" mat-raised-button color="primary">Update
+                        Role</button>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</div>

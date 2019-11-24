@@ -1,0 +1,55 @@
+<div class="parent">
+    <div>
+        <mat-card>
+            <form [formGroup]="employeeForm" (submit)="onEmployeeFormSubmit()" class="example-form">
+                <div class="image-up">
+                    <div class="hq">
+                        <img [src]="ImgUrl" class="profile-pic" alt="" onerror="this.src='assets/images/image.png';">
+                        <div class="profile-pic pro-div">
+                            <span class="fa fa-camera"></span>
+                            <span id="get_file" (click)="choosePhoto()">Select Image</span>
+                            <span>
+                                <input type="file" id="my_file" (change)="readUrl($event)"
+                                    accept="image/x-png,image/jpeg">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <mat-form-field class="example-full-width">
+                    <input type="text" matInput placeholder="Employee Name" formControlName="employeeName">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input type="email" matInput placeholder="Employee Email" formControlName="employeeEmail">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="employeeDOB">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input type="tel" matInput placeholder="Telephone" formControlName="employeeMobile">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Roles</mat-label>
+                    <mat-select multiple formControlName="employeeRoles">
+                        <mat-option *ngFor="let item of roles" [value]="item.roleName">{{item.roleName}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div>
+                    <label id="example-radio-group-label">Job Type:</label>
+                    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                        formControlName="jobType">
+                        <mat-radio-button class="example-radio-button" *ngFor="let item of radioLabels"
+                            [value]="item.name">
+                            {{item.name}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="example-button-row">
+                    <button [disabled]="employeeForm.invalid" type="submit" mat-raised-button color="primary">Add
+                        Employee</button>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</div>

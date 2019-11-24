@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <mat-icon (click)="drawer.toggle()" class="example-icon cursor-pointer" aria-hidden="false"
+            aria-label="Example user verified icon">menu
+        </mat-icon>
+        <span style="margin: 0 6%;">Employee Role</span>
+        <span class="example-spacer"></span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- <div class="container"> -->
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <mat-list role="list">
+            <mat-list-item *ngFor="let item of menuList" role="listitem" [routerLink]="[item.route]"
+                routerLinkActive="router-link-active" class="cursor-pointer">{{item.name}}</mat-list-item>
+            <mat-list-item role="listitem" class="cursor-pointer" (click)="onLogout()">Logout</mat-list-item>
+        </mat-list>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+        <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>
+<!-- </div> -->

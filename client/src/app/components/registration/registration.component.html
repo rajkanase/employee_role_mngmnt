@@ -1,0 +1,38 @@
+<div class="parent">
+    <div>
+        <mat-card>
+            <form [formGroup]="regForm" (submit)="onRegFormSubmit()" class="example-form">
+                <mat-form-field class="example-full-width">
+                    <input type="text" matInput placeholder="Firstname" formControlName="firstName">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input type="text" matInput placeholder="Lastname" formControlName="lastName">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input type="email" matInput placeholder="Email" formControlName="email">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'"
+                        formControlName="password">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Password" [type]="hideC ? 'password' : 'text'"
+                        formControlName="cPassword">
+                    <button mat-icon-button matSuffix (click)="hideC = !hideC" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hideC">
+                        <mat-icon>{{hideC ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+                <a [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
+                <div class="example-button-row">
+                    <button [disabled]="regForm.invalid" type="submit" mat-raised-button
+                        color="primary">Register</button>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</div>
