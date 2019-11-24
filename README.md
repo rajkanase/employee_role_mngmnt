@@ -16,3 +16,5 @@ open terminal inside client folder.
 
 ng serve to run front end.
 
+mongodb is used.(db name "employee_role_mngmnt")
+
