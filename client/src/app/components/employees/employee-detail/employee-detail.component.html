@@ -1,0 +1,28 @@
+<div>
+    <div>
+        <img [src]="ImgUrl" class="profile-pic" alt="" onerror="this.src='assets/images/image.png';">
+    </div>
+    <div>
+        Name: {{profileData.employeeName}}
+    </div>
+    <div>
+        Employee Email: {{profileData.employeeEmail}}
+    </div>
+    <div>
+        Employee Mobile No: {{profileData.employeeMobile}}
+    </div>
+    <div>
+        Employee DOB: {{profileData.employeeDOB | date}}
+    </div>
+    <div>
+        Employee Roles
+    </div>
+    <div>
+        <ul>
+            <li *ngFor="let item of profileData.employeeRoles">{{item}}</li>
+        </ul>
+    </div>
+    <div>
+        Employee Job Type: {{profileData.jobType}}
+    </div>
+</div>

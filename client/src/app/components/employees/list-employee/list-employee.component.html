@@ -6,8 +6,8 @@
         <span>Employee Name</span>
         <span>Action</span>
     </mat-card>
-    <mat-card class="matCard" *ngFor="let item of employees">
-        <span>{{item.employeeName}}</span>
+    <mat-card class="matCard" *ngFor="let item of employees; let i = index">
+        <span class="cursor-pointer" (click)="openDialog(i)">{{item.employeeName}}</span>
         <mat-icon (click)="onUpdateIcon(item._id)" class="example-icon cursor-pointer" aria-hidden="false"
             aria-label="Example user verified icon">create
         </mat-icon>

@@ -29,6 +29,8 @@ import { EmployeesComponent } from './components/employees/employees.component';
 import { AddEmployeeComponent } from './components/employees/add-employee/add-employee.component';
 import { ListEmployeeComponent } from './components/employees/list-employee/list-employee.component';
 import { MatRadioModule } from '@angular/material/radio';
+import { EmployeeDetailComponent } from './components/employees/employee-detail/employee-detail.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -47,7 +49,8 @@ import { MatRadioModule } from '@angular/material/radio';
     EmployeesComponent,
     AddEmployeeComponent,
     ListEmployeeComponent,
-    UpdateEmployeeComponent
+    UpdateEmployeeComponent,
+    EmployeeDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +63,7 @@ import { MatRadioModule } from '@angular/material/radio';
     MatSidenavModule,
     MatDatepickerModule,
     MatSelectModule,
+    MatDialogModule,
     MatRadioModule,
     MatListModule,
     MatButtonModule,
@@ -68,6 +72,9 @@ import { MatRadioModule } from '@angular/material/radio';
     MatCardModule,
     MatIconModule,
     MatToolbarModule
+  ],
+  entryComponents: [
+    EmployeeDetailComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
